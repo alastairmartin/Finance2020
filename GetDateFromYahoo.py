@@ -10,18 +10,6 @@ returns
 # get stock info
 print('*** Info: ',msft.info)
 
-"""
-returns:
-{
- 'quoteType': 'EQUITY',
- 'quoteSourceName': 'Nasdaq Real Time Price',
- 'currency': 'USD',
- 'shortName': 'Microsoft Corporation',
- 'exchangeTimezoneName': 'America/New_York',
-  ...
- 'symbol': 'MSFT'
-}
-"""
 
 # get historical market data
 print('*** History: ',msft.history(period="1wk",interval='5m'))

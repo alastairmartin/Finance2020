@@ -24,7 +24,7 @@ returns:
 """
 
 # get historical market data
-msft.history(period="max")
+print('History',msft.history(period="1wk",interval='5m'))
 """
 returns:
               Open    High    Low    Close      Volume  Dividends  Splits
@@ -37,7 +37,7 @@ Date
 """
 
 # show actions (dividends, splits)
-msft.actions
+print('Actins',msft.actions)
 """
 returns:
             Dividends  Splits
@@ -50,7 +50,7 @@ Date
 """
 
 # show dividends
-msft.dividends
+print('Dividends',msft.dividends)
 """
 returns:
 Date
@@ -62,7 +62,7 @@ Date
 """
 
 # show splits
-msft.splits
+print('Splits',msft.splits)
 """
 returns:
 Date

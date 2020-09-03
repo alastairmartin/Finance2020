@@ -1,6 +1,6 @@
 import yfinance as yf
 
-msft = yf.Ticker("BA.L")
+msft = yf.Ticker("DJIA")
 print(msft)
 
 print('-----------------------------------------------------------------------------')
@@ -11,7 +11,7 @@ for x,y in msft.info.items():
 
 print('-----------------------------------------------------------------------------')
 # get historical market data
-print('*** History: ',msft.history(period="5yr",interval='1h'))
+print('*** History: ',msft.history(period="1mo",interval='1h'))
 
 print('-----------------------------------------------------------------------------')
 # show actions (dividends, splits)

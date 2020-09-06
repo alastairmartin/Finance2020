@@ -1,78 +1,78 @@
 import yfinance as yf
 
-msft = yf.Ticker("BT.L")
-print(msft)
+ticker = yf.Ticker("BA.L")
+print(ticker)
 
 print('-----------------------------------------------------------------------------')
 # get stock info
-print('*** Info: ',msft.info)
-for x,y in msft.info.items():
+print('*** Info: ',ticker.info)
+for x,y in ticker.info.items():
     print(x,': ',y)
 
 print('-----------------------------------------------------------------------------')
 # get historical market data
-print('*** History: ',msft.history(period="1mo",interval='1h'))
+print('*** History: ',ticker.history(period="5yr",interval='1h'))
 
 print('-----------------------------------------------------------------------------')
 # show actions (dividends, splits)
-print('*** Actions: ',msft.actions)
+print('*** Actions: ',ticker.actions)
 
 print('-----------------------------------------------------------------------------')
 # show dividends
-print('*** Dividends',msft.dividends)
+print('*** Dividends',ticker.dividends)
 
 print('-----------------------------------------------------------------------------')
 # show splits
-print('*** Splits',msft.splits)
+print('*** Splits',ticker.splits)
 
 print('-----------------------------------------------------------------------------')
 # show financials
-print('*** Financials: ',msft.financials)
-print('*** Quarterly financials: ',msft.quarterly_financials)
+print('*** Financials: ',ticker.financials)
+print('*** Quarterly financials: ',ticker.quarterly_financials)
 
 print('-----------------------------------------------------------------------------')
 # show major holders
-print('*** Major holders: ',msft.major_holders)
+print('*** Major holders: ',ticker.major_holders)
 
 print('-----------------------------------------------------------------------------')
 # show institutional holders
-print('*** Institutional holders: ',msft.institutional_holders)
+print('*** Institutional holders: ',ticker.institutional_holders)
 
 print('-----------------------------------------------------------------------------')
 # show balance heet
-print('*** Balance sheet: ',msft.balance_sheet)
-print('*** Quarterly balance sheet: ',msft.quarterly_balance_sheet)
+print('*** Balance sheet: ',ticker.balance_sheet)
+print('*** Quarterly balance sheet: ',ticker.quarterly_balance_sheet)
 
 print('-----------------------------------------------------------------------------')
 # show cashflow
-print('*** Cashflow: ',msft.cashflow)
-print('*** Quarterly cashflow: ',msft.quarterly_cashflow)
+print('*** Cashflow: ',ticker.cashflow)
+print('*** Quarterly cashflow: ',ticker.quarterly_cashflow)
 
 print('-----------------------------------------------------------------------------')
 # show earnings
-print('*** Earnings: ',msft.earnings)
-print('*** Quarterly earnings: ',msft.quarterly_earnings)
+print('*** Earnings: ',ticker.earnings)
+print('*** Quarterly earnings: ',ticker.quarterly_earnings)
 
 print('-----------------------------------------------------------------------------')
 # show sustainability
-print('*** Sustainability: ',msft.sustainability)
+print('*** Sustainability: ',ticker.sustainability)
 
 print('-----------------------------------------------------------------------------')
 # show analysts recommendations
-print('*** Recommendations: ',msft.recommendations)
+print('*** Recommendations: ',ticker.recommendations)
 
 print('-----------------------------------------------------------------------------')
 # show next event (earnings, etc)
-print('*** Calendar: ',msft.calendar)
+print('*** Calendar: ',ticker.calendar)
 
 print('-----------------------------------------------------------------------------')
 # show ISIN code - *experimental*
 # ISIN = International Securities Identification Number
-print('*** ISIN: ',msft.isin)
+print('*** ISIN: ',ticker.isin)
 
 # show options expirations
-#print(msft.options)
+#print(ticker.options)
 
 # get option chain for specific expiration
-#opt = msft.option_chain('YYYY-MM-DD')
+#opt = ticker.option_chain('YYYY-MM-DD')
 # data available via: opt.calls, opt.puts

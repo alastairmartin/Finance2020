@@ -1,6 +1,6 @@
 import yfinance as yf
 
-msft = yf.Ticker("DJIA")
+msft = yf.Ticker("BT.L")
 print(msft)
 
 print('-----------------------------------------------------------------------------')

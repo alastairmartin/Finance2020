@@ -1,74 +1,139 @@
 import yfinance as yf
+import pandas as pd
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
 
-ticker = yf.Ticker("BA.L")
+ticker = yf.Ticker("VOD.L")
 print(ticker)
 
 print('-----------------------------------------------------------------------------')
 # get stock info
-print('*** Info: ',ticker.info)
-for x,y in ticker.info.items():
-    print(x,': ',y)
+# print('*** Info: ',ticker.info)
 
-print('-----------------------------------------------------------------------------')
+try:
+    ticker.info
+    for x,y in ticker.info.items():
+        print(x,': ',y)
+except Exception as e:
+    print(e)
+
+print('History ---------------------------------------------------------------------')
 # get historical market data
-print('*** History: ',ticker.history(period="5yr",interval='1h'))
+try:
+    prices = ticker.history(period="59d",interval='5m' ) #pandas dataframe
+    print('*** History: ', prices)
+except Exception as e:
+    print(e)
 
-print('-----------------------------------------------------------------------------')
+print('Action-----------------------------------------------------------------------')
 # show actions (dividends, splits)
-print('*** Actions: ',ticker.actions)
-
-print('-----------------------------------------------------------------------------')
+try:
+    print('*** Actions: ',ticker.actions)
+except Exception as e:
+    print(e)
+       
+print('Dividends -------------------------------------------------------------------')
 # show dividends
-print('*** Dividends',ticker.dividends)
+try:
+    print('*** Dividends',ticker.dividends)
+except Exception as e:
+    print(e)
 
-print('-----------------------------------------------------------------------------')
+print('Splits ----------------------------------------------------------------------')
 # show splits
-print('*** Splits',ticker.splits)
+try:
+    print('*** Splits',ticker.splits)
+except Exception as e:
+    print(e)
 
-print('-----------------------------------------------------------------------------')
+print('Financials ------------------------------------------------------------------')
 # show financials
-print('*** Financials: ',ticker.financials)
-print('*** Quarterly financials: ',ticker.quarterly_financials)
+try:
+    print('*** Financials: ',ticker.financials)
+except Exception as e:
+        print(e)
 
-print('-----------------------------------------------------------------------------')
+try:
+    print('*** Quarterly financials: ',ticker.quarterly_financials)
+except Exception as e:
+    print(e)
+
+print('Major holders ---------------------------------------------------------------')
 # show major holders
-print('*** Major holders: ',ticker.major_holders)
+try:
+    print('*** Major holders: ',ticker.major_holders)
+except Exception as e:
+    print(e)
 
 print('-----------------------------------------------------------------------------')
 # show institutional holders
-print('*** Institutional holders: ',ticker.institutional_holders)
+try:
+    print('*** Institutional holders: ',ticker.institutional_holders)
+except Exception as e:
+        print(e)
 
-print('-----------------------------------------------------------------------------')
-# show balance heet
-print('*** Balance sheet: ',ticker.balance_sheet)
-print('*** Quarterly balance sheet: ',ticker.quarterly_balance_sheet)
+print('Balance Sheet ---------------------------------------------------------------')
+# show balance sheet
+try:
+    print('*** Balance sheet: ',ticker.balance_sheet)
+except Exception as e:
+    print(e)
+try:
+    print('*** Quarterly balance sheet: ',ticker.quarterly_balance_sheet)
+except Exception as e:
+    print(e)
 
-print('-----------------------------------------------------------------------------')
+
+print('Cashflow --------------------------------------------------------------------')
 # show cashflow
-print('*** Cashflow: ',ticker.cashflow)
-print('*** Quarterly cashflow: ',ticker.quarterly_cashflow)
+try:
+    print('*** Cashflow: ',ticker.cashflow)
+except Exception as e:
+    print(e)
+try:
+    print('*** Quarterly cashflow: ',ticker.quarterly_cashflow)
+except Exception as e:
+    print(e)
 
-print('-----------------------------------------------------------------------------')
+print('Earnings --------------------------------------------------------------------')
 # show earnings
-print('*** Earnings: ',ticker.earnings)
-print('*** Quarterly earnings: ',ticker.quarterly_earnings)
+try:
+    print('*** Earnings: ',ticker.earnings)
+except Exception as e:
+    print(e)
+try:
+    print('*** Quarterly earnings: ',ticker.quarterly_earnings)
+except Exception as e:
+    print(e)
 
-print('-----------------------------------------------------------------------------')
+print('Sustainability --------------------------------------------------------------')
 # show sustainability
-print('*** Sustainability: ',ticker.sustainability)
+try:
+    print('*** Sustainability: ',ticker.sustainability)
+except Exception as e:
+    print(e)
 
 print('-----------------------------------------------------------------------------')
 # show analysts recommendations
-print('*** Recommendations: ',ticker.recommendations)
+try:
+    print('*** Recommendations: ',ticker.recommendations)
+except Exception as e:
+    print(e)
 
 print('-----------------------------------------------------------------------------')
 # show next event (earnings, etc)
-print('*** Calendar: ',ticker.calendar)
+try:
+    print('*** Calendar: ',ticker.calendar)
+except Exception as e:
+    print(e)
 
 print('-----------------------------------------------------------------------------')
 # show ISIN code - *experimental*
 # ISIN = International Securities Identification Number
-print('*** ISIN: ',ticker.isin)
+try:
+    print('*** ISIN: ',ticker.isin)
+except Exception as e:
+    print(e)
 
 # show options expirations
 #print(ticker.options)

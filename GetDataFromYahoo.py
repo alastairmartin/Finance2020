@@ -9,6 +9,11 @@ print('*** Info: ',ticker.info)
 for x,y in ticker.info.items():
     print(x,': ',y)
 
+#re-print smoe key features
+print('-----------------------------------------------------------------------------')
+print('bookValue', ticker.info['bookValue'])
+print('forwardPE', ticker.info['forwardPE'])
+
 print('-----------------------------------------------------------------------------')
 # get historical market data
 print('*** History: ',ticker.history(period="5yr",interval='1h'))

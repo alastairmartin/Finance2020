@@ -3,7 +3,7 @@ import pandas as pd
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
-ticker = yf.Ticker("VOD.L")
+ticker = yf.Ticker("VOD")
 print(ticker)
 
 print('-----------------------------------------------------------------------------')
@@ -20,7 +20,7 @@ except Exception as e:
 print('History ---------------------------------------------------------------------')
 # get historical market data
 try:
-    prices = ticker.history(period="59d",interval='5m' ) #pandas dataframe
+    prices = ticker.history(period="1y",interval='1d' ) #pandas dataframe
     print('*** History: ', prices)
 except Exception as e:
     print(e)
